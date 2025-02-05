@@ -18,7 +18,7 @@ Functionally equivalent at minimum to Realpolitik (Latest Version)
 New File Types:
 .dpy - Game file for diplomacy. Holds a header with information about how the
     game was created, and also the type of game file. A few different modes 
-    (tracking vs turns) of data storage will be included, some easier than others.
+    (tracking vs turn state) of data storage will be included, some easier than others.
 .dpymap - Map file for diplomacy. Defines home centers, starting positions,
     variant specific info, etc. Lays out map data (should eventually create an 
     svg to .dpymap tool) in a computer readable format. Unlike Realpolitik, the

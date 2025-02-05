@@ -12,29 +12,102 @@ body {
     background-color:#FFFFFF;
     color:#000000;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 2em;
 }
 h2 {
-    font-size: 30px;
+    font-size: 1.5em;
+}
+h3 {
+    font-size: 1.25em;
 }
 p {
-    font-size: 20px;
+    font-size: 0.875em;
 }
 </style>
 </Header>
 
 <body>
-<!--Using table for automatic width and formatting. Holdover from Realpolitik internal docs-->
+<!--Using table for automatic width and formatting. Holdover from Realpolitik internal docs.
+This renders everything inside of a single table cell. -->
 <table width="90%" border="0" cellspacing="0" cellpadding="0" align="center">
     <tr>
         <td>
             <h1> 
                 Realpolitik 2 Technical Notes
             </h1>
-
+            <p>
+                By Jacob Jones
+            </p>
+            <p>
+                The purpose of this document is to be an overview of the code; 
+                this program is intended as a fresh rebuild to Realpolitik, an adjudicator for Diplomacy.
+            </p>
+            <h2>
+                History
+            </h2>
+            <p>
+                From the Realpolitik Technical Manual, Jim Van Verth:
+            </p>
+            <p>"Realpolitik began as a Unix program, written to moderate games amongst my friends. While 
+                the games ended (sorry Gus), I continued working on the program. Originally 
+                I intended it to be a mail server, but gave that up after being introduced 
+                to the Judge. However, seeing MapIt gave me the idea of giving it a graphical 
+                interface and running it on the Macintosh. MacDip was born. I continued 
+                working on MacDip for a few years until circumstances led me to pull it 
+                from distribution. But after I saw other programs continue, I brought 
+                MacDip back, in a new incarnation: Realpolitik. The following years saw 
+                a port of Realpolitik to Windows, and then a cross platform version with 
+                shared data files and common code. 
+            </p>
+            <p>
+                "This rather checkered 
+                resolution code, and it has a definite vanilla C feel to it. There are 
+                history has led to some rather checkered code. The oldest code is the 
+                parts are the platform specific classes, which are fairly object-oriented, 
+                some #defines which act like C++ methods, but it's basically C. The newest 
+                but there are, admittedly, some hacks."
+            </p>
+            <p>
+                The rational behind doing a full rebuild of the software is the prevalence of 
+                web based diplomacy games has crowded out the desktop adjudicators. Therefor, I 
+                want to develop a platform to expand upon Realpolitik to add new capabilities into 
+                program that allow it to thrive in a world that's constantly changing.
+            </p>
+            <h3>
+                New File Formats
+            </h3>
+            <p>
+                One of the major limitations I ran into was the lack of a standard to transfer information 
+                between different softwares. I suspect this will still be the case for a long time, but I expect 
+                that the current methods of storing game data (platform specific or images) will eventually transition 
+                (towards platform agnostic). 
+            </p>
+            <p>
+                Currently, I'm focusing on two file formats. The code to read these formats should be able to be easily 
+                expanded with additional parsing modules.
+            </p>
+            <p>
+                .dpy -- These are the diplomacy game files, that call a .dpymap file and overwrite the initial gamestate. 
+                The .dpy file can store moves as a history of gamestates (turn-state), or as a pure order list (tracking), or both. 
+                The issue with pure order list is that if anything breaks, everything breaks (one change tracks into the next game state). 
+                The default behavior is that turn-state data overwrites tracking information. This might create issues 
+            </p>
+            <p>
+                .dpymap -- These files wrap up many Realpolitik files into one, with subsections in the file. The header of a map file needs to match 
+                the game file being loaded, otherwise bad things... 
+                The map files hold all the data relating to the map. Map files should be able to call other mapfiles as dependancies (mainly to reduce 
+                the amount of svg data that needs to be stored[avoid circular loops in dependancies]). 
+            </p>
+            <h2>
+                File Manifest
+            </h2>
+            <p>
+                
+            </p>
         </td>
     </tr>
 </table>

@@ -1,0 +1,9 @@
+DPY Game File
+Realpolitik 2 Standard 
+1901 Traditional
+Dependancies: None
+
+dpymap = Mapfile.dpymap
+adjudicator = 2023Realpolitik_v1
+ruleset = 2023Realpolitik_v1
+
