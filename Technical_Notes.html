@@ -94,7 +94,9 @@ This renders everything inside of a single table cell. -->
                 .dpy -- These are the diplomacy game files, that call a .dpymap file and overwrite the initial gamestate. 
                 The .dpy file can store moves as a history of gamestates (turn-state), or as a pure order list (tracking), or both. 
                 The issue with pure order list is that if anything breaks, everything breaks (one change tracks into the next game state). 
-                The default behavior is that turn-state data overwrites tracking information. This might create issues 
+                The default behavior is that turn-state data overwrites tracking information. This might create issues with mixing and matching 
+                adjudicators and maps without understanding the backend. <br> Holds a header that contains information about the backend information. 
+                <br> See sample files for details
             </p>
             <p>
                 .dpymap -- These files wrap up many Realpolitik files into one, with subsections in the file. The header of a map file needs to match 
@@ -106,7 +108,13 @@ This renders everything inside of a single table cell. -->
                 File Manifest
             </h2>
             <p>
-                
+                .dpy - Game file for diplomacy. Holds a header with information about how the
+    game was created, and also the type of game file. A few different modes 
+    (tracking vs turn state) of data storage will be included, some easier than others.
+.dpymap - Map file for diplomacy. Defines home centers, starting positions,
+    variant specific info, etc. Lays out map data (should eventually create an 
+    svg to .dpymap tool) in a computer readable format. Unlike Realpolitik, the
+    spaces are stored from svg to be rendered as a shape that is clickable.
             </p>
         </td>
     </tr>

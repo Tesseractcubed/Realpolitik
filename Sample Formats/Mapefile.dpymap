@@ -1,2 +1,40 @@
-DPY Map File
+DPY Map File                    ## Always Present, if not interpreter looks for other unique exceptions
 Realpolitik 2 Standard
+1901 Traditional
+
+dependancies = None
+adjudicator = 2023Realpolitik_v1
+ruleset = 2023Realpolitik_v1
+
+Units                           ## Only written to allow unusual units in variants
+    army as A
+    fleet as F
+Provinces
+    Province Name
+        name
+        abbreviations
+        type                    ## land, sea
+        supply center           ## might allow for 
+Players
+    Austria, AU, 
+    England, EN, #1050db,
+    France, FR, #55d3c2,
+    Germany, DE
+    Italy, IT, 
+    Russia, RU,
+    Turkey, TR,
+
+Win Conditions
+    
+Starting Config
+
+AU 
+
+EN F Lon
+EN F Lvp
+EN F Edi
+
+FR A Par
+FR A Mar
+FR F Bre
+

@@ -1,9 +1,14 @@
-DPY Game File
-Realpolitik 2 Standard 
-1901 Traditional
-Dependancies: None
+DPY Game File           ## Always Present, if not interpreter looks for Realpolitik 1 or other unique versions
+Realpolitik 2 Standard  ## Standard for here
+1901 Traditional        ## Default Diplomacy. Best to indicate a starting year (1901) and type (Traditional). Needs a unique name
 
+dependancies = None                     ## Checks if this file needs to also load with other files. For compatability, as opposed to intended 
 dpymap = Mapfile.dpymap
 adjudicator = 2023Realpolitik_v1
 ruleset = 2023Realpolitik_v1
 
+Game History
+1901.1
+AU A Tri hold                  ## Sample orders
+FR F Bre - MAO
+RU F Spt(sc) - Bot
