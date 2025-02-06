@@ -1,40 +1,42 @@
-DPY Map File                    ## Always Present, if not interpreter looks for other unique exceptions
-Realpolitik 2 Standard
-1901 Traditional
+--- # Uses YAML 
+DPY Game File: 2                ## Always Present, if not interpreter looks for other unique exceptions (Specifically Realpolitik1)
+Standard: Realpolitik2
+Variant: 1901 Traditional
 
-dependancies = None
-adjudicator = 2023Realpolitik_v1
-ruleset = 2023Realpolitik_v1
+# This next block needs to match from mapfile to gamefile
+dependancies: None                  
+adjudicator: 2023Realpolitik_v1    # Allows for different plug and play adjudicators
+ruleset: 2023Realpolitik_v1        # Allows for different rulesets on same adjudicator, although I suspect this isn't necessary
 
-Units                           ## Only written to allow unusual units in variants
-    army as A
-    fleet as F
-Provinces
+## Generally, unit is one letter (typ capital), Country is 2 letter, province (location) is 3 letter or abbreviation. Support for full province names and abbreviations should
+
+
+Units:                           ## Only written to allow unusual units in variants
+- Army: A
+- Fleet: F
+Provinces: 
     Province Name
         name
         abbreviations
-        type                    ## land, sea
+        type                    ## land, sea, variant support for ice ()
         supply center           ## might allow for 
-Players
-    Austria, AU, 
-    England, EN, #1050db,
-    France, FR, #55d3c2,
-    Germany, DE
-    Italy, IT, 
-    Russia, RU,
-    Turkey, TR,
+Players:
+- Austria, AU, 
+- England, EN, 1050db,
+- France, FR, 55d3c2,
+- Germany, DE
+- Italy, IT, 
+- Russia, RU,
+- Turkey, TR,
 
-Win Conditions
+Win Conditions                 # Allows for variation in win conditions, depending on module
     
-Starting Config
+Starting Config:
 
-AU 
-
-EN F Lon
-EN F Lvp
-EN F Edi
-
-FR A Par
-FR A Mar
-FR F Bre
-
+- AU 
+- EN F Lon
+- EN F Lvp
+- EN F Edi
+- FR A Par
+- FR A Mar
+- FR F Bre
