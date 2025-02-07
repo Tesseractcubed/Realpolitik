@@ -6,20 +6,47 @@ Variant: 1901 Traditional
 # This next block needs to match from mapfile to gamefile
 dependancies: None                  
 adjudicator: 2023Realpolitik_v1    # Allows for different plug and play adjudicators
-ruleset: 2023Realpolitik_v1        # Allows for different rulesets on same adjudicator, although I suspect this isn't necessary
+rulesets: 
+  - 2023Realpolitik_v1 
+  - Aberration Builds     # Allows for different rulesets on same adjudicator, although I suspect this isn't necessary
 
 ## Generally, unit is one letter (typ capital), Country is 2 letter, province (location) is 3 letter or abbreviation. Support for full province names and abbreviations should
 
 
 Units:                           ## Only written to allow unusual units in variants
-- Army: A
-- Fleet: F
+  army: A
+  fleet: F
 Provinces: 
-    Province Name
-        name
-        abbreviations
-        type                    ## land, sea, variant support for ice ()
-        supply center           ## might allow for 
+  Adriatic Sea:
+    abbreviations:
+      - ADR
+      - 
+    adjacencies:
+      - 
+    type: sea                    ## land, sea, variant support for ice ()
+    supplycenter:     ## might allow for unique types in variants
+    
+
+- London
+- Naples:
+    adjacencies: [Apu,]
+  Spain:
+    abbreviations:
+      - Spa
+    adjacencies:
+      - Gascony
+      - Gulf of Lyon
+      - Marseilles
+      - Mid Atlantic Ocean
+      - Portugal
+      - West Mediterranian Sea
+    type: sea                    ## land, sea, variant support for ice ()
+    supplycenter:
+    coasts:
+      - nc
+      - sc
+
+
 Players:
 - Austria, AU, 
 - England, EN, 1050db,
