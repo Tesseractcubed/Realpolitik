@@ -1,5 +1,5 @@
 --- # Uses YAML 
-DPY Game File: 2                ## Always Present, if not interpreter looks for other unique exceptions (Specifically Realpolitik1)
+DPY Map File: v1               ## Always Present, if not interpreter looks for other unique exceptions (Specifically Realpolitik1)
 Standard: Realpolitik2
 Variant: 1901 Traditional
 
@@ -9,10 +9,8 @@ adjudicator: 2023Realpolitik_v1    # Allows for different plug and play adjudica
 rulesets: 
   - 2023Realpolitik_v1 
   - Aberration Builds     # Allows for different rulesets on same adjudicator, although I suspect this isn't necessary
-
-## Generally, unit is one letter (typ capital), Country is 2 letter, province (location) is 3 letter or abbreviation. Support for full province names and abbreviations should
-
-
+## Generally, unit is one letter (typ capital), Country is 2 letter, province (location) is 3 letter or abbreviation. 
+## Support for full province names and abbreviations should
 Units:                           ## Only written to allow unusual units in variants
   army: A
   fleet: F
@@ -27,24 +25,33 @@ Provinces:
     supplycenter:     ## might allow for unique types in variants
     
 
-- London
-- Naples:
-    adjacencies: [Apu,]
+  London:
+
+  Naples:
+    adjacencies: {
+      land: [Wales, Yorkshire],
+      sea: [English Channel, North Sea],
+    }
   Spain:
-    abbreviations:
-      - Spa
-    adjacencies:
-      - Gascony
-      - Gulf of Lyon
-      - Marseilles
-      - Mid Atlantic Ocean
-      - Portugal
-      - West Mediterranian Sea
-    type: sea                    ## land, sea, variant support for ice ()
-    supplycenter:
+
     coasts:
       - nc
       - sc
+    abbreviations:
+    adjacencies:
+      land:
+        - Portugal
+        - Gascony
+        - Marseilles
+      sea: 
+        nc:
+          - Mid Atlantic Ocean
+        sc:
+          - Gulf of Lyon
+          - West Mediterranian Sea
+    type: sea                    ## land, sea, variant support for ice ()
+    supplycenter: yes
+    
 
 
 Players:

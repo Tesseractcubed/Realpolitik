@@ -1,10 +1,5 @@
-% DPY Game File           ## Always Present, if not interpreter looks for Realpolitik 1 or other unique versions
-Realpolitik 2 Standard  ## Standard for here
-1901 Traditional        ## Default Diplomacy. Best to indicate a starting year (1901) and type (Traditional). Needs a unique name
-
-
 --- # Uses YAML 
-DPY Game File: 2          ## Always Present, if not interpreter looks for other unique exceptions (Specifically Realpolitik1)
+DPY Game File: v1         ## Always Present, if not interpreter looks for other unique exceptions (Specifically Realpolitik1)
 Standard: Realpolitik2      ## Standard for here, differentiating again (possible 2.1 for standard, etc.)
 Variant: 1901 Traditional   ## Variant. Best to indicate a starting year (1901) and type (Traditional). Needs a unique name to be looked up.
 # This next block needs to match from mapfile to gamefile, otherwise should throw a warning.
